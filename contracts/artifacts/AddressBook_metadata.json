@@ -1,0 +1,83 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "contactAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "addContact",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "contactAddress",
+						"type": "address"
+					}
+				],
+				"name": "getContact",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/AddressBook.sol": "AddressBook"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/AddressBook.sol": {
+			"keccak256": "0xcce14a3b0f3d0d3f7085297131aa52b09fc3c924a1ecf7516850aceb8dee6cd7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://89d8d43daa314f67bf8b23cb9e9af7d00adcea6658ac1c2242994565263a2acd",
+				"dweb:/ipfs/QmeujEXxTJdzbKuJ3RjgvQXxe4Qw47mHnWqzziEuW5M8G2"
+			]
+		}
+	},
+	"version": 1
+}
