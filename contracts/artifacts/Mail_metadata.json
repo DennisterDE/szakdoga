@@ -57,6 +57,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "deleteEmail",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "_user",
 						"type": "address"
@@ -79,14 +92,8 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_sender",
-						"type": "address"
-					}
-				],
-				"name": "getEmailsBySender",
+				"inputs": [],
+				"name": "getEmailsReceived",
 				"outputs": [
 					{
 						"components": [
@@ -194,6 +201,24 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "_subject",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_message",
+						"type": "string"
+					}
+				],
+				"name": "sendEmailToMany",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "",
 						"type": "address"
@@ -264,11 +289,11 @@
 	},
 	"sources": {
 		"contracts/Mail.sol": {
-			"keccak256": "0x5251be6174ab133cd50b174c0471363d84a3d8f13202a6994f9b04c1cc5720e5",
+			"keccak256": "0xd87e9eb6a16203314a4b9b6d13f0bd96a01d1ccf3748c3d90b0dd125b55b892b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1cabeb78fc2bde2838a1b041e6bda4bb8a6d13d4ec303298fe138429e0e61377",
-				"dweb:/ipfs/QmNs5mLMseziJNuEmRdFPsF74fyecCqKzZ4Dd2f2qjJVdT"
+				"bzz-raw://d37f2dc1887aff29254aee05f66931f1000b6a09b059b417bebfa053265a46ad",
+				"dweb:/ipfs/QmTJdnnP7XH3Dp2hAMm1uA5i1cXDX2RnsGZxa7XodTj5iv"
 			]
 		}
 	},

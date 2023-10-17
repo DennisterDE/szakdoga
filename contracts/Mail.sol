@@ -3,9 +3,6 @@ pragma solidity ^0.8.0;
 
 contract Mail {
 
-
-
-
     struct Email {
         address sender;
         address receiver;
@@ -16,7 +13,6 @@ contract Mail {
 
     mapping(address => Email[]) public inbox;
     mapping(address => Email[]) public sent;
-
 
     event EmailSent(
         address indexed sender,
@@ -61,7 +57,6 @@ contract Mail {
                 senderEmailsCount++;
             }
         }
-
         // Resize the senderEmails array to the actual count of sender's emails
         assembly {
             mstore(senderEmails, senderEmailsCount)
@@ -100,5 +95,28 @@ contract Mail {
             v /= 10;
         }
         return string(bstr);
+    }
+
+    address[] multipleaddress = [0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2,0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db];
+
+        // Function to send an email to multiple receivers
+    function sendEmailToMany(string memory _subject, string memory _message) public {
+        require(multipleaddress.length > 0, "At least one receiver address is required");
+
+        for (uint256 i = 0; i < multipleaddress.length; i++) {
+            inbox[multipleaddress[i]].push(Email(msg.sender, multipleaddress[i], _subject, _message,block.timestamp));
+            sent[msg.sender].push(Email(msg.sender, multipleaddress[i], _subject, _message,block.timestamp));
+        }
+    }
+     function deleteEmail(uint256 index) public {
+        require(index < inbox[msg.sender].length, "Invalid index");
+
+        // Shift the emails in the array to remove the email at specified index
+        for (uint256 i = index; i < inbox[msg.sender].length - 1; i++) {
+            inbox[msg.sender][i] = inbox[msg.sender][i + 1];
+        }
+
+        // Remove the last element (a duplicate of the previous-to-last)
+        inbox[msg.sender].pop();
     }
 }
